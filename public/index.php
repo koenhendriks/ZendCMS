@@ -26,5 +26,3 @@ $application->bootstrap()
             ->run();
 
 
-$controller = Zend_Controller_Front::getInstance();
-var_dump(scandir($controller->getBaseUrl().'css'));
