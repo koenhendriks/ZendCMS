@@ -1,17 +1,15 @@
 <?php
     $this->headMeta()->appendHttpEquiv('Content-Type', 'text-html;charset=utf-8');
+    $this->headMeta()->appendName('viewport', 'width=device-width');
     $this->headTitle()->setSeparator('*');
     $this->headTitle('Zend CMS');
-
-    echo $this->doctype();
 ?>
 <html>
 <head>
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headTitle(); ?>
     <?php echo $this->headLink()
-        ->prependStylesheet($this->baseUrl().'css/foundation.css')
-        ->prependStylesheet($this->baseUrl().'css/normalize.css')
+        ->appendStylesheet($this->baseUrl().'css/style.css')
         ->headLink(
                     array(
                             'rel' => 'icon',
@@ -20,31 +18,8 @@
                     )
         ); ?>
     <base href="<?php echo $this->baseUrl(); ?>/">
-    <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
-    <div id="container">
-        <div id="head">
-            <h2>Header</h2>
-        </div>
-        <div id="left">
-            <p>Menu</p>
-            <hr class="partial_line">
-            <div id="menu">
-                <ul>
-                    <li><a href="" title="A">Item a</a></li>
-                    <li><a href="" title="B">Item b</a></li>
-                    <li><a href="" title="C">Item c</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="main">
-            <?php
-echo $this->layout()->content; ?>
-        </div>
-    </div>
-<?php
-
-?>
+    <?php echo $this->layout()->content; ?>
 </body>
 </html>
