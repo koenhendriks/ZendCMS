@@ -1,9 +1,12 @@
-<div class="container">
+<?php
 
+$this->title = "Home";
+$this->headTitle($this->title);
+?>
     <div class="starter-template">
         <h1>ZendCMS Default Home</h1>
         <p class="lead">This content is loaded within a layout using Twitter Bootstrap as front end</p>
+        <p class="lead"><?php echo $this->date.$this->homepage?></p>
     </div>
-
 </div>
 
