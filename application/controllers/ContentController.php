@@ -10,8 +10,15 @@ class ContentController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $content = new Application_Model_DbTable_Content();
+        $this->view->content = $content->fetchAll();
     }
+
+    public function addAction()
+    {
+
+    }
+
 
 
 }
