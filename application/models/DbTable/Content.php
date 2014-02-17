@@ -9,7 +9,7 @@ class Application_Model_DbTable_Content extends Zend_Db_Table_Abstract
     {
         $data = array(
             'title' => $title,
-            'content' => $text,
+            'text' => $text,
             'created' => date("Y-m-d H:i:s")
         );
         $this->insert($data);
