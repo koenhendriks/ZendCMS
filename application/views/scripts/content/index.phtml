@@ -4,7 +4,6 @@ $this->headTitle($this->title);
 echo $this->headLink();
 ?>
 
-
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
         <h3>Beheer <a href="<?php echo $this->url(array('controller'=>'content', 'action'=>'add'));?>" id="btnAdd" class="btn btn-primary">Toevoegen</a></h3>
@@ -29,9 +28,7 @@ echo $this->headLink();
                 </tr>
                 <tr>
                     <td><a href="<?php echo $this->url(array('controller' => 'content', 'action'=>'edit', 'id'=>$data->id));?>" class="btn btn-success btn-small"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-                </tr>
-                <tr>
-                    <td><a href="<?php echo $this->url(array('controller' => 'content', 'action'=>'delete', 'id'=>$data->id));?>" class="btn btn-success btn-small"><span class="glyphicon glyphicon-delete"></span> Delete</a></td>
+                    <td><a href="<?php echo $this->url(array('controller' => 'content', 'action'=>'delete', 'id'=>$data->id));?>" class="btn btn-danger btn-small"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
