@@ -1,4 +1,40 @@
-<h3>Content view</h3>
+<?php
+$this->title = "Content beheer";
+$this->headTitle($this->title);
+echo $this->headLink();
+?>
+
+
 <div class="row">
-    <div class="col-md-12">index</div>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Beheer <a href="<?php echo $this->url(array('controller'=>'content', 'action'=>'add'));?>" id="btnAdd" class="btn btn-primary">Toevoegen</a></h3>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($this->content as $data): ?>
+                <tr>
+                    <td><?php echo $this->escape($data->title); ?></td>
+                    <td><?php echo $this->escape($data->created); ?></td>
+                    <td><?php echo $this->escape($data->updated); ?></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><?php echo $this->escape($data->text); ?></td>
+                </tr>
+                <tr>
+                    <td><a href="<?php echo $this->url(array('controller' => 'content', 'action'=>'edit', 'id'=>$data->id));?>" class="btn btn-success btn-small"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+                </tr>
+                <tr>
+                    <td><a href="<?php echo $this->url(array('controller' => 'content', 'action'=>'delete', 'id'=>$data->id));?>" class="btn btn-success btn-small"><span class="glyphicon glyphicon-delete"></span> Delete</a></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </div>
