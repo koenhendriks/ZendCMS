@@ -1,0 +1,17 @@
+<?php
+$this->title = "Verwijderen";
+$this->headTitle($this->title);
+?>
+<div class="row">
+    <br/>
+    <div class="alert alert-danger col-sm-12 col-md-12 col-lg-12">
+
+        Bent u er zeker van dat u deze content wil verwijderen met de titel: <b><?php echo $this->escape($this->content['title']) ?></b>?
+        <form action="<?php echo $this->url(array('action' => 'delete'));?>" method="post">
+
+            <input type="hidden" name="id" value="<?php echo $this->content['id']; ?>" />
+            <input type="submit" name="del" value="yes" class="form-inline btn btn-warning" />
+            <input type="submit" name="del" value="no" class="form-inline btn btn-default" />
+        </form>
+    </div>
+</div>
