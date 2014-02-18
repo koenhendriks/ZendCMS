@@ -42,5 +42,16 @@ class Application_Model_DbTable_Content extends Zend_Db_Table_Abstract
     {
         $this->delete('id='.(int)$id);
     }
+
+    public function getRow($id)
+    {
+        $id = (int)$id;
+        $row = $this->fetchRow('id='.$id);
+        if(!$row)
+        {
+            throw new Exception("Kan de rij met ".$id." niet vinden");
+        }
+        return $row->toArray();
+    }
 }
 
