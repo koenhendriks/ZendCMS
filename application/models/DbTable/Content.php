@@ -37,5 +37,10 @@ class Application_Model_DbTable_Content extends Zend_Db_Table_Abstract
         );
         $this->update($data, 'id='.(int)$id);
     }
+
+    public function deleteContent($id)
+    {
+        $this->delete('id='.(int)$id);
+    }
 }
 
