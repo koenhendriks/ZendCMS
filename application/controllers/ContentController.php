@@ -75,11 +75,33 @@ class ContentController extends Zend_Controller_Action
                 $form->populate($content->getContent($id));
             }
         }
+    }
 
+    public function deleteAction()
+    {
+        if($this->getRequest()->isPost())
+        {
+            $del = $this->getRequest()->getPost('del');
+            if($del == 'yes')
+            {
+                $id = $this->getRequest()->getPost('id');
+                $content = new Application_Model_DbTable_Content();
+                $content->deleteContent($id);
+            }
+            $this->_helper->redirector('index');
+        }
+        else
+        {
+            $id = $this->_getParam('id',0);
+            $content = new Application_Model_DbTable_Content();
+            $this->view->content = $content->getContent($id);
+        }
     }
 
 
 }
+
+
 
 
 
