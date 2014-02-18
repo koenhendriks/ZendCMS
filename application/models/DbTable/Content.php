@@ -14,5 +14,28 @@ class Application_Model_DbTable_Content extends Zend_Db_Table_Abstract
         );
         $this->insert($data);
     }
+
+    public function getContent($id)
+    {
+        $id = (int)$id;
+        $row = $this->fetchRow('id = '. $id);
+        if(!$row)
+        {
+            throw new Exception("Kan de rij met ".$id." niet vinden");
+        }
+        return $row->toArray();
+    }
+
+    public function updateContent($id,$title,$text,$data)
+    {
+        $data = $this->getContent($id);
+        $data = array(
+                'title' => $title,
+                'text'  => $text,
+                'created' => $data['created'],
+                'updated' => date("Y-m-d H:i:s")
+        );
+        $this->update($data, 'id='.(int)$id);
+    }
 }
 
