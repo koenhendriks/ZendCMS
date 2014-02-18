@@ -26,7 +26,7 @@ class Application_Model_DbTable_Content extends Zend_Db_Table_Abstract
         return $row->toArray();
     }
 
-    public function updateContent($id,$title,$text,$data)
+    public function updateContent($id,$title,$text)
     {
         $data = $this->getContent($id);
         $data = array(
