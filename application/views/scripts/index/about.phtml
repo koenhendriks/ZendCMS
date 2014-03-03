@@ -1,0 +1,12 @@
+<?php
+$this->title = $this->content['title'];
+$this->headTitle($this->title);
+
+echo $this->headLink();
+?>
+<h3><?php echo ucfirst($this->title); ?></h3>
+<div class="row">
+    <div class="col-sm-12 col-md-12 collg-12">
+        <?php echo $this->content['text'] ?>
+    </div>
+</div>

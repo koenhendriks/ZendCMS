@@ -14,6 +14,15 @@ class IndexController extends Zend_Controller_Action
         $this->view->homepage .= '<br/>From index action';
     }
 
+    public function aboutAction()
+    {
+        $id = 7;
+        $record = new Application_Model_DbTable_Content();
+        $this->view->content = $record->getRow($id);
+    }
+
 
 }
+
+
 
