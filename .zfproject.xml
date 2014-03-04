@@ -21,6 +21,12 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="show"/>
         </controllerFile>
+        <controllerFile controllerName="Login">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="getAuthAdapter"/>
+          <actionMethod actionName="getLoginForm"/>
+          <actionMethod actionName="logout"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="Content"/>
@@ -62,6 +68,18 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Pages">
             <viewScriptFile forActionName="show"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="getAuthAdapter"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="getLoginForm"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="logout"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

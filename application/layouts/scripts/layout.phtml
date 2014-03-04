@@ -44,7 +44,7 @@ $this->headTitle('Zend CMS');
             <!-- Placed at the end of the document so the pages load faster -->
             <?php
             echo $this->headScript()->prependFile('https://code.jquery.com/jquery-1.10.2.min.js')
-                ->prependFile($this->baseUrl().'js/bootstrap.min.js');
+                ->appendFile($this->baseUrl().'js/bootstrap.min.js');
             ?>
         </body>
     </html>
