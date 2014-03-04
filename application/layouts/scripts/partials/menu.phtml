@@ -30,6 +30,9 @@ $menuArray = $statement->fetchAll();
                 <?php endforeach; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <?php if(Zend_Auth::getInstance()->hasIdentity()): ?>
+                    <li><a href="/content/"><span class="glyphicon glyphicon-hand-right"></span> Admin</a></li>
+                <?php endif; ?>
                 <li>
                     <?php
                         if(!Zend_Auth::getInstance()->hasIdentity())
@@ -38,7 +41,6 @@ $menuArray = $statement->fetchAll();
                         echo '<a href="/login/logout">Logout</a>';
                     ?>
                 </li>
-                <li><a href="/content/"><span class="glyphicon glyphicon-hand-right"></span> Admin</a></li>
             </ul>
         </div>
     </div>
