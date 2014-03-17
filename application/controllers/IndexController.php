@@ -5,7 +5,8 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+        $nameSpace = new Zend_Session_Namespace('test');
+        $nameSpace->testkey = 'dit is een testvalue';
     }
 
     public function indexAction()
@@ -16,6 +17,8 @@ class IndexController extends Zend_Controller_Action
 
     public function aboutAction()
     {
+        $nameSpace = new Zend_Session_Namespace('test');
+        $this->view->namespace = $nameSpace;
         $id = 7;
         $record = new Application_Model_DbTable_Content();
         $this->view->content = $record->getRow($id);
