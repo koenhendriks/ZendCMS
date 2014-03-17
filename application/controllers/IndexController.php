@@ -11,7 +11,7 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         $this->view->date = date('d-m-Y');
-        $this->view->homepage .= '<br/>From index action';
+        $this->view->debug = ZendCMS_Cms::cmsStaticMethod();
     }
 
     public function aboutAction()

@@ -7,6 +7,11 @@ $this->headTitle($this->title);
         <h1>ZendCMS Default Home</h1>
         <p class="lead">This content is loaded within a layout using Twitter Bootstrap as front end</p>
         <p class="lead"><?php echo $this->date.$this->homepage?></p>
+        <h1>Debug info from a custom library:</h1>
+        <?php foreach($this->debug as $key => $value): ?>
+            <p>
+                <?php echo $key; ?> <span class="glyphicon glyphicon-hand-right"></span> <?php echo $value ?>
+            </p>
+        <?php endforeach; ?>
     </div>
-</div>
 
